@@ -1,7 +1,7 @@
 # IaC
-Infrastructure as a code is where we codify everything. We are turning our requirements and tasks into code that can be executed by computers. This allows us to automate processes, reuse scripts, and manage our infrastructure efficiently. Tools like Ansible help us achieve this automation and streamline our operations.
+Infrastructure as a code is where we codify everything. We are turning our requirements and tasks into code that can be executed by computers. This allows us to automate processes, reuse scripts, and manage our infrastructure efficiently.
 # Ansible 
-Ansible is a open source configuration management tool is highly used in the DevOps community due to its simplicity, lightweight nature, and agentless architecture. It provides an intuitive interface for managing infrastructure, simplifies the setup process, and enables efficient configuration management without introducing dependencies.
+Ansible is a open source configuration management tool is highly used in the DevOps community due to its simplicity, lightweight nature, and agentless architecture. git 
 
 ![Alt text](images/ansible_demo_HO.png)
 
@@ -68,7 +68,4 @@ And if it working when we do the ping command we should see this;
 ![Alt text](<images/Screenshot of ping.png>)
 
 
-# For the app and db instance:
 
-1. sudo apt update -y
-2. sudo apt upgrade -y
