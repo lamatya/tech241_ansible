@@ -74,3 +74,57 @@ And if it working when we do the ping command we should see this;
 2. sudo apt upgrade -y
 
 Both instance will need the update and upgrade command before we do the ping command. 
+
+
+
+# Adhoc Commands
+
+sudo ansible web -a "uname -a" - checks the OS version
+
+sudo ansible web -a "date" - checks the timezone 
+
+sudo ansible web -a "free" - checks the free space
+
+sudo ansible web -a "ls -a" - lits the packages installed
+
+# Playbook
+
+### Why YAML?
+### YAML file start with --- three dashes (most files not every files these days)
+### Why playbooks
+### Create a playbook to install nginx in web-node.
+```
+---
+
+### Which host to perform the task
+- hosts: web
+
+### See the logs by gathering facts
+  gather_facts: yes
+
+### admin access is required.
+  become: true
+
+### add the instructions - install nginx - web
+  tasks:
+  - name: Installing Nginx
+    apt: pkg=nginx state=present
+
+### ensure the status of nginx is actively running.
+### go back to adhoc command to check the status.
+```
+# Playbook -nodejs/npm Automating app
+
+![Alt text](images/nodejs-playbook.png)
+
+1. In this playbook, the steps are as follows:
+
+2. Install Node.js on the server.
+
+3. Clone the GitHub repository containing the app to the /home/ubuntu/app directory.
+
+4. Install npm (Node Package Manager) on the server.
+
+5. Run npm install in the /home/ubuntu/app/app directory to install the app's dependencies.
+
+6. Start the application by running npm start in the /home/ubuntu/app/app directory.
