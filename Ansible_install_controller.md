@@ -85,46 +85,75 @@ sudo ansible web -a "date" - checks the timezone
 
 sudo ansible web -a "free" - checks the free space
 
-sudo ansible web -a "ls -a" - lits the packages installed
+sudo ansible web -a "ls -a" - lists the packages installed
 
 # Playbook
 
 ### Why YAML?
+
+Its readability and ease of use make it ideal for various applications, such as defining Ansible playbooks, Docker, Kubernetts. 
+
 ### YAML file start with --- three dashes (most files not every files these days)
+
 ### Why playbooks
+
+In simple words, playbooks are a set of instructions or tasks written in a specific format to automate and manage the configuration and deployment of software on multiple computers or servers. They are commonly used with Ansible, a popular automation tool.
+
 ### Create a playbook to install nginx in web-node.
 ```
 ---
 
-### Which host to perform the task
+# Which host to perform the task
 - hosts: web
 
-### See the logs by gathering facts
+# See the logs by gathering facts
   gather_facts: yes
 
-### admin access is required.
+# admin access is required.
   become: true
 
-### add the instructions - install nginx - web
+# add the instructions - install nginx - web
   tasks:
   - name: Installing Nginx
     apt: pkg=nginx state=present
 
-### ensure the status of nginx is actively running.
+# ensure the status of nginx is actively running.
 ### go back to adhoc command to check the status.
 ```
 # Playbook -nodejs/npm Automating app
 
 ![Alt text](images/nodejs-playbook.png)
 
-1. In this playbook, the steps are as follows:
 
-2. Install Node.js on the server.
+1. Install Node.js on the server.
 
-3. Clone the GitHub repository containing the app to the /home/ubuntu/app directory.
+2. Clone the GitHub repository containing the app to the /home/ubuntu/app directory.
 
-4. Install npm (Node Package Manager) on the server.
+3. Install npm (Node Package Manager) on the server.
 
-5. Run npm install in the /home/ubuntu/app/app directory to install the app's dependencies.
+4. Run npm install in the /home/ubuntu/app/app directory to install the app's dependencies.
 
-6. Start the application by running npm start in the /home/ubuntu/app/app directory.
+5. Start the application by running npm start in the /home/ubuntu/app/app directory.
+
+# Automating the app with pm2
+
+![Alt text](images/Pm2.png)
+
+```
+1. It adds the NodeSource repository to the server to get Node.js version 12.x.
+
+2. It clones the Node.js application's code from a GitHub repository to the server.
+
+3. It installs Node.js on the server using the NodeSource repository.
+
+4. It installs PM2, a process manager for Node.js applications, with a specific version.
+
+5. It installs the dependencies required for the Node.js application using NPM.
+
+6. It starts the Node.js application using PM2.
+```
+
+# Using Playbook to install and configure Nginx and setting up reverse proxy
+
+![Alt text](images/nginx.png)
+
