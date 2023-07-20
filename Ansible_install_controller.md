@@ -171,4 +171,34 @@ In simple words, playbooks are a set of instructions or tasks written in a speci
 
 ![Alt text](<images/checking status.png>)
 
+# Adding bindip to 0.0.0.0
+
+![Alt text](images/bindip.png)
+
+1. Change MongoDB Configuration:
+
+The task modifies MongoDB's configuration to allow it to accept connections from any IP address (0.0.0.0).
+
+2. Restart MongoDB:
+
+After changing the configuration, the task restarts MongoDB so that the changes take effect.
+
+3. Enable MongoDB:
+
+The task ensures MongoDB is enabled, so it automatically starts whenever the server boots up.
+
+# On the App Vm Create a environemnt variable
+
+
+Sure, here's a simplified explanation of each command:
+
+1. SSH to your app VM and go to your app folder to create environment variable;
+
+2. sudo nano /etc/environment: Opens the /etc/environment file using the nano text editor with administrator privileges, likely to modify system-wide environment variables.
+
+3. ps aux | grep PM2: Lists all running processes and filters the output to show only processes containing the string "PM2." This helps to identify PM2-related processes.
+
+4. sudo kill -9 3562: Terminates the process with ID 3562 forcefully. 
+
+5. sudo node seeds/seed.js: Executes the Node.js script seed.js located in the seeds directory.
 
