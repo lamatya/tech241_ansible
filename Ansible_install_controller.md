@@ -157,3 +157,18 @@ In simple words, playbooks are a set of instructions or tasks written in a speci
 
 ![Alt text](images/nginx.png)
 
+# Playbook for installing mongodb on database
+
+### Create a playbook to install mongodb; To create playbook use command sudo nano mongodb-playbook.yml 
+
+![Alt text](<images/mongodb install.png>)
+
+### Install mongodb using the command; **sudo ansible-playbook mongodb-playbook.yml**
+
+![Alt text](<images/run mongodb.png>)
+
+### Once you install check the status of mongodb using the command; sudo ansible db -a "systemctl status mongodb"
+
+![Alt text](<images/checking status.png>)
+
+
