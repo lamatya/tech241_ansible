@@ -52,3 +52,12 @@ In the System Properties window, click the "Environment Variables" button.
 
 ![Alt text](images/Version-terraform.png)
 
+# Infrastructure as Code (IaC) Terraform.
+
+![Alt text](images/TF-Architecture.png)
+
+Terraform: Use Terraform to create the initial infrastructure on AWS or any cloud provider. This includes resources like VPC, subnets, security groups, and any other necessary components for your environment. Terraform ensures the infrastructure is set up correctly according to the specified configuration.
+
+Ansible: After the initial infrastructure is provisioned by Terraform, use Ansible to configure the instances created by Terraform. Ansible playbooks can be used to install and update software, manage configurations, and perform other necessary tasks on the instances. Ansible works at a higher level and operates on the already provisioned infrastructure.
+
+
