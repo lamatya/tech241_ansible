@@ -70,6 +70,9 @@ Terraform: Use Terraform to create the initial infrastructure on AWS or any clou
 
 Ansible: After the initial infrastructure is provisioned by Terraform, use Ansible to configure the instances created by Terraform. Ansible playbooks can be used to install and update software, manage configurations, and perform other necessary tasks on the instances. Ansible works at a higher level and operates on the already provisioned infrastructure.
 
+![Alt text](<images/Terraform infrastructure.png>)
+
+
 # Commands used to run Terraform:
 
 1. printenv aws_access_key_id: Displays the value of the AWS access key used for authentication.
