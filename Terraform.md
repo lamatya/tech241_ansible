@@ -110,7 +110,37 @@ Ansible: After the initial infrastructure is provisioned by Terraform, use Ansib
 
 4. Once the script has been created using the command "Terraform apply" will create the EC2 instance if all the information provided have been configured correctly. It will ask you to input the value "yes" and enter.
 
+# Create VPC using Terraform
 
+![Alt text](images/diagram.png)
+
+# Port rules for app and db
+
+
+## app
+![Alt text](<images/port rules.png>)
+
+
+## db
+
+![Alt text](<images/dp port.png>)
+
+
+# Steps to Create VPC with Terraform
+
+1. CIDR block 10.0.0.0/16
+
+2. Create internet gateway.
+
+3. Attach to VPC.
+
+4. Input Subnets.
+
+5. Create route tables (public)
+
+6. Add routes
+
+7. Add the VM
 
 
 
