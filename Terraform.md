@@ -20,7 +20,17 @@ Terraform is an open-source infrastructure as code (IaC) tool developed by Hashi
 
 # Who is using Terraform
 
-Terraform is used by various organizations, ranging from startups to large enterprises. Many technology companies, including Airbnb, GitHub, HashiCorp, and Uber, use Terraform to manage their infrastructure efficiently.
+Terraform is used by various organizations, ranging from startups to large enterprises. 
+
+- Netflix
+
+- Airbnb
+
+- HashiCorp
+
+- GitHub
+
+- Adobe
 
 # How to Install Terraform
 
@@ -59,5 +69,45 @@ In the System Properties window, click the "Environment Variables" button.
 Terraform: Use Terraform to create the initial infrastructure on AWS or any cloud provider. This includes resources like VPC, subnets, security groups, and any other necessary components for your environment. Terraform ensures the infrastructure is set up correctly according to the specified configuration.
 
 Ansible: After the initial infrastructure is provisioned by Terraform, use Ansible to configure the instances created by Terraform. Ansible playbooks can be used to install and update software, manage configurations, and perform other necessary tasks on the instances. Ansible works at a higher level and operates on the already provisioned infrastructure.
+
+# Commands used to run Terraform:
+
+1. printenv aws_access_key_id: Displays the value of the AWS access key used for authentication.
+
+2. printenv aws_secret_access_key: Shows the value of the AWS secret access key.
+
+3. mkdir terraform-tech241: Creates a new folder named "terraform-tech241" to organize Terraform files.
+
+4. cd terraform-tech241: Moves into the "terraform-tech241" folder to work on your Terraform configuration.
+
+5. nano main.tf: Opens the "main.tf" file in a text editor.
+   
+6. cat main.tf: Displays the contents of the "main.tf" file so you can see what's inside. This is just to make sure it has been saved correctly.
+
+7. terraform init: Initializes Terraform in the current directory, preparing it to work with AWS.
+![Alt text](<images/terraform init.png>)
+
+1. terraform plan: Generates an execution plan, showing what changes Terraform will make to AWS infrastructure without actually applying them.
+![Alt text](<images/terraform plan.png>)
+   
+
+9. terraform apply: Applies the changes defined in  Terraform configuration to create or modify AWS resources based on the plan. 
+![Alt text](<images/terraform apply.png>)
+
+10. terraform destroy: Destroys all the AWS resources created by Terraform in the main.tf.
+![Alt text](<images/terraform destroy.png>)
+
+
+# How to Launch an EC2 instance using Terrafom 
+
+1. Make a directory using the command Mkdir "terraform-tech241"
+2. Create a file inside the directory "nano main.tf"
+3. Inside the file write the script. 
+![Alt text](images/terraform_instance.png)
+
+4. Once the script has been created using the command "Terraform apply" will create the EC2 instance if all the information provided have been configured correctly. It will ask you to input the value "yes" and enter.
+
+
+
 
 
